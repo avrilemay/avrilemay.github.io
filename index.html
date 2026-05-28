@@ -939,7 +939,7 @@
     </nav>
 
     <div class="sidebar-links">
-      <a href="mailto:floro.avrile@gmail.com">Email</a>
+      <a class="js-email" data-u="floro.avrile" data-d="gmail.com">Email</a>
       <a href="https://github.com/avrilemay" target="_blank" rel="noopener">GitHub</a>
       <a href="https://scholar.google.com/citations?user=8EidgqsAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
     </div>
@@ -975,10 +975,10 @@
       </p>
 
       <p>
-        Four research lines this year at IP Paris: legal NLP (statutory citation
-        in French civil law), mechanistic interpretability of LLMs (cultural
-        binding circuits), multi-agent systems (collective influence), and graph
-        modeling of jurisprudential corpora.
+        My work at IP Paris spans several areas: legal NLP and statutory
+        citation in French civil law, mechanistic interpretability and cultural
+        binding circuits in LLMs, scalability in multi-agent control, and
+        computational analysis of jurisprudential corpora.
       </p>
 
       <ul class="bullets">
@@ -1036,9 +1036,10 @@
           <span class="tag">Multi-agent</span>
           <h3>How many dogs to herd sheep?</h3>
           <p>
-            NetLogo agent-based study of how the number of shepherd dogs scales
-            with flock size. We propose a local sheep-density gradient as a
-            tractable proxy for the flock's global centre of mass.
+            NetLogo agent-based study of how exogenous control scales with
+            collective size: how many shepherd dogs are needed as the flock
+            grows. We propose a local sheep-density gradient as a tractable proxy
+            for the flock's global centre of mass.
           </p>
           <span class="read-more">Read more →</span>
         </div>
@@ -1059,7 +1060,7 @@
         </a>
         <div class="pub-body">
           <h3><a href="https://arxiv.org/abs/2603.22973" target="_blank" rel="noopener">Where Experts Disagree, Models Fail: Detecting Implicit Legal Citations in French Court Decisions</a></h3>
-          <div class="pub-authors"><strong>Avrile Floro</strong>, Tatiana Dhorasoo, Sébastien Pellez, Nils Holzenberger</div>
+          <div class="pub-authors"><strong>Avrile Floro</strong>, Tatiana Dhorasoo, Soline Pellez, Nils Holzenberger</div>
           <div class="pub-venue">Preprint · 2026</div>
           <a class="pub-status" href="https://arxiv.org/abs/2603.22973" target="_blank" rel="noopener">Preprint ↗</a>
         </div>
@@ -1311,7 +1312,7 @@
         <div class="contact-grid">
           <div>
             <span>Email</span>
-            <a href="mailto:floro.avrile@gmail.com">floro.avrile@gmail.com</a>
+            <a class="js-email js-email-text" data-u="floro.avrile" data-d="gmail.com">email me</a>
           </div>
           <div>
             <span>GitHub</span>
@@ -1446,8 +1447,9 @@
     <p>
       A NetLogo agent-based study of how the number of shepherd dogs required
       to herd a flock scales with flock size. The real question behind the
-      dogs-and-sheep framing: how does collective influence work when a small
-      population tries to nudge a much larger one toward a goal?
+      dogs-and-sheep framing is one of scalability: how does the cost of
+      steering a swarm grow as the collective gets larger, and where are the
+      breakpoints past which a given number of controllers can no longer succeed?
     </p>
 
     <h3>Contribution</h3>
@@ -1561,6 +1563,17 @@
   hoverables.forEach(el => {
     el.addEventListener('mouseenter', () => ring.classList.add('grow'));
     el.addEventListener('mouseleave', () => ring.classList.remove('grow'));
+  });
+
+  // Assemble email addresses at runtime (keeps them out of the static HTML for scrapers)
+  document.querySelectorAll('.js-email').forEach(el => {
+    const user = el.getAttribute('data-u');
+    const domain = el.getAttribute('data-d');
+    const addr = user + String.fromCharCode(64) + domain;
+    el.setAttribute('href', 'mailto:' + addr);
+    if (el.classList.contains('js-email-text')) {
+      el.textContent = addr;
+    }
   });
 </script>
 
