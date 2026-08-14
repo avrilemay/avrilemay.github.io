@@ -7,7 +7,7 @@
 <title>Avrile Floro</title>
 <meta name="description" content="Personal homepage of Avrile Floro, PhD Track Master student in Data & AI at Institut Polytechnique de Paris." />
 <meta property="og:title" content="Avrile Floro" />
-<meta property="og:description" content="PhD Track Master student in Data & AI at Institut Polytechnique de Paris. Mechanistic interpretability, AI fairness, and applied NLP." />
+<meta property="og:description" content="PhD Track Master student in Data & AI at Institut Polytechnique de Paris. Mechanistic interpretability, AI fairness, and legal NLP." />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231a1922'/><path d='M8 10 L15 16 L8 22' fill='none' stroke='%23a78bfa' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/><rect x='17' y='19' width='9' height='3' fill='%23a78bfa'/></svg>" />
@@ -1003,22 +1003,23 @@
 
       <p>
         I work on <strong>mechanistic interpretability</strong>,
-        <strong>AI fairness</strong>, and <strong>applied NLP</strong>, including
-        legal NLP. I'm drawn to questions that cut across these: how social and
-        cultural biases get encoded as circuits inside language models, how we
-        evaluate fairness in practice, and how NLP applies to specialised domains
-        like law.
+        <strong>AI fairness</strong>, and <strong>legal NLP</strong>. I'm drawn
+        to questions that cut across these: how social and cultural biases get
+        encoded as circuits inside language models, when interpretability
+        readouts can be trusted for bias auditing, and how NLP interacts with
+        the law and the <strong>regulatory frameworks</strong> that govern AI.
       </p>
 
       <p>
-        My work at IP Paris spans several areas: legal NLP and statutory
-        citation in French civil law, mechanistic interpretability and cultural
-        binding circuits in LLMs, scalability in multi-agent control, and
-        computational analysis of jurisprudential corpora.
+        My current research spans four lines: interpretability auditing for
+        bias measurement (with Emory University), argument mining on French
+        Supreme Court rulings (i3, CNRS), mechanistic interpretability of
+        cultural binding in LLMs (Télécom SudParis), and implicit legal
+        citation detection (Télécom Paris).
       </p>
 
       <ul class="bullets">
-        <li>Background: law (LL.M., Duke; Master's, Paris-Dauphine), then linguistics and teaching, now AI/NLP</li>
+        <li>Background: law (LL.M., Duke; financial law, Paris-Dauphine) and banking compliance at PwC, then linguistics and teaching, now AI/NLP</li>
         <li>I read and write in French and English, and speak Spanish</li>
         <li>Outside the lab: PADI Divemaster, blackwater and pelagic diving</li>
       </ul>
@@ -1032,15 +1033,41 @@
       </div>
 
       <div class="research-grid">
+        <div class="research-card" data-modal="modal-biasaudit">
+          <span class="tag">Mech Interp · Fairness</span>
+          <h3>Interpretability Auditing for Bias Measurement</h3>
+          <p>
+            When can readouts of a model's internal representations be trusted
+            for bias measurement and steering? Joint work with Prof. Ali Emami
+            (Emory University) on evaluation protocols for the reliability of
+            interpretability methods in social-bias auditing, across multiple
+            open-weight LLMs.
+          </p>
+          <span class="read-more">Read more →</span>
+        </div>
+
+        <div class="research-card" data-modal="modal-cassation">
+          <span class="tag">Legal NLP · Internship 2026</span>
+          <h3>Argument Mining on French Supreme Court Rulings</h3>
+          <p>
+            A large-scale extraction pipeline exploiting the codified rhetorical
+            structure of French <em>cassation</em> rulings to map each ground of
+            appeal to the court's response: 121K+ argument pairs across 86K
+            decisions and the five civil chambers. Lead author of the resulting
+            dataset and tool paper.
+          </p>
+          <span class="read-more">Read more →</span>
+        </div>
+
         <div class="research-card" data-modal="modal-mechinterp">
           <span class="tag">Mech Interp</span>
           <h3>Cultural Binding Heads</h3>
           <p>
             Why do LLMs default to equal treatment across cultural groups even
-            when context warrants differentiation? I identify the mid-layer
+            when context warrants differentiation? I identify the 2–3 mid-layer
             attention heads that causally mediate cultural binding across eight
-            language models, and find that the bottleneck is <em>routing</em>,
-            not knowledge.
+            language models, and find that models know 3–5× more than they act
+            upon: the bottleneck is <em>routing</em>, not knowledge.
           </p>
           <span class="read-more">Read more →</span>
         </div>
@@ -1053,29 +1080,6 @@
             annotated by three legal experts (κ = 0.33). Annotator disagreement
             turns out to be the strongest predictor of model failure on implicit
             statutory citation.
-          </p>
-          <span class="read-more">Read more →</span>
-        </div>
-
-        <div class="research-card" data-modal="modal-cassation">
-          <span class="tag">Internship · 2026</span>
-          <h3>NLP &amp; graphs on French jurisprudence</h3>
-          <p>
-            Summer research internship at Télécom Paris on French case-law
-            corpora, using NLP and graph modeling to study how legal reasoning
-            evolves over time.
-          </p>
-          <span class="read-more">Read more →</span>
-        </div>
-
-        <div class="research-card" data-modal="modal-shepherding">
-          <span class="tag">Multi-agent</span>
-          <h3>How many dogs to herd sheep?</h3>
-          <p>
-            NetLogo agent-based study of how exogenous control scales with
-            collective size: how many shepherd dogs are needed as the flock
-            grows. We propose a local sheep-density gradient as a tractable proxy
-            for the flock's global centre of mass.
           </p>
           <span class="read-more">Read more →</span>
         </div>
@@ -1097,8 +1101,8 @@
         <div class="pub-body">
           <h3><a href="https://arxiv.org/abs/2603.22973" target="_blank" rel="noopener">Where Experts Disagree, Models Fail: Detecting Implicit Legal Citations in French Court Decisions</a></h3>
           <div class="pub-authors"><strong>Avrile Floro</strong>, Tamara Dhorasoo, Soline Pellez, Nils Holzenberger</div>
-          <div class="pub-venue">Preprint · 2026</div>
-          <a class="pub-status" href="https://arxiv.org/abs/2603.22973" target="_blank" rel="noopener">Preprint ↗</a>
+          <div class="pub-venue">Under review · 2026</div>
+          <a class="pub-status" href="https://arxiv.org/abs/2603.22973" target="_blank" rel="noopener">arXiv ↗</a>
         </div>
       </div>
 
@@ -1110,18 +1114,18 @@
         <div class="pub-body">
           <h3><a href="https://arxiv.org/abs/2605.28543" target="_blank" rel="noopener">Cultural Binding Heads in Language Models</a></h3>
           <div class="pub-authors"><strong>Avrile Floro</strong>, Luca Benedetto</div>
-          <div class="pub-venue">Preprint · 2026</div>
-          <a class="pub-status" href="https://arxiv.org/abs/2605.28543" target="_blank" rel="noopener">Preprint ↗</a>
+          <div class="pub-venue">Under review · 2026</div>
+          <a class="pub-status" href="https://arxiv.org/abs/2605.28543" target="_blank" rel="noopener">arXiv ↗</a>
         </div>
       </div>
 
       <div class="pub">
-        <div class="pub-thumb">Collective<br>Nudging</div>
+        <div class="pub-thumb">French<br>Civil<br>Cassation</div>
         <div class="pub-body">
-          <h3>Collective Nudging that Scales: How Many Dogs Do I Need to Herd Sheep?</h3>
-          <div class="pub-authors"><strong>Avrile Floro</strong>, Ada Diaconescu</div>
-          <div class="pub-venue">In preparation · 2026</div>
-          <span class="pub-status preprint">In preparation</span>
+          <h3>A Grammar of French Civil Cassation: A Ground-Level Dataset and Tool</h3>
+          <div class="pub-authors"><strong>Avrile Floro</strong>, Tamara Dhorasoo, Nils Holzenberger, Thomas Le Goff, Tiphaine Viard, Maria Boritchev</div>
+          <div class="pub-venue">Work in progress · 2026</div>
+          <span class="pub-status preprint">Work in progress</span>
         </div>
       </div>
     </section>
@@ -1139,18 +1143,18 @@
           <h3>IP Paris PhD Track Excellence Scholarship</h3>
           <p>
             Competitive merit-based scholarship from Institut Polytechnique de
-            Paris, covering cost-of-living and tuition across the two years of
-            the Master's.
+            Paris: a cost-of-living grant plus subsidized tuition across the
+            two years of the Master's.
           </p>
         </div>
 
         <div class="award">
-          <div class="award-meta">Sept–Dec 2025 · École Polytechnique</div>
+          <div class="award-meta">Sep–Dec 2025 · École Polytechnique</div>
           <h3>Kaggle: <em>Influencer or Observer</em> · 1st of 87 teams</h3>
           <p>
             Winning solution for the Deep Learning course (INF554) Kaggle
             competition. NLP classifier predicting users' social roles from
-            tweet content alone.
+            tweet data alone.
           </p>
         </div>
       </div>
@@ -1185,6 +1189,18 @@
       </div>
 
       <div class="project-grid">
+        <div class="project-card">
+          <span class="project-tag">NetLogo · Multi-agent</span>
+          <h4>How many dogs to herd sheep?</h4>
+          <p>
+            NetLogo agent-based study, with Prof. Ada Diaconescu (LTCI,
+            Télécom Paris), of how herding effort scales with flock size.
+            Proposes a local sheep-density gradient as a tractable proxy for
+            the flock's centre of mass.
+          </p>
+          <a class="project-link" href="https://github.com/avrilemay/sheepherding-scaling" target="_blank" rel="noopener">Repo ↗</a>
+        </div>
+
         <div class="project-card">
           <span class="project-tag">R · Shiny · Time series</span>
           <h4>French electricity consumption forecasting</h4>
@@ -1247,7 +1263,7 @@
         <div class="timeline-item">
           <div class="timeline-date">2022–2025</div>
           <div class="timeline-body">
-            <h3>Bachelor's in Computer Science <span class="grade">16.7/20 · highest honors</span></h3>
+            <h3>Bachelor's in Computer Science <span class="grade">16.7/20 · summa cum laude</span></h3>
             <div class="org"><a href="https://www.univ-paris8.fr/" target="_blank" rel="noopener">Université Paris 8 Vincennes – Saint-Denis</a></div>
             <p>Selected projects: R Shiny app for French electricity consumption forecasting · BERT vs. BART sentiment analysis on U.S. election subreddit · CV pipeline for invoice extraction · Self-Organizing Map classifier in C.</p>
           </div>
@@ -1258,14 +1274,14 @@
           <div class="timeline-body">
             <h3>Mathematics &amp; Statistics <span class="grade">30 ECTS</span></h3>
             <div class="org"><a href="https://www.cnam.fr/" target="_blank" rel="noopener">CNAM</a> <em>(non-degree coursework)</em></div>
-            <p>Linear models · Time-series modeling &amp; forecasting · Statistical techniques · Scientific foundations of mathematics.</p>
+            <p>Linear Models · Time-Series Modeling &amp; Forecasting · Statistical Techniques · Scientific Foundations of Mathematics.</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-date">2022–2023</div>
           <div class="timeline-body">
-            <h3>Master's in Teaching French as a Foreign Language <span class="grade">13.85/20 · cum laude</span></h3>
+            <h3>Master's in Teaching French as a Foreign, Second, or Specific-Purpose Language <span class="grade">13.85/20 · cum laude</span></h3>
             <div class="org"><a href="https://www.univ-artois.fr/" target="_blank" rel="noopener">Université d'Artois</a></div>
           </div>
         </div>
@@ -1291,7 +1307,7 @@
           <div class="timeline-date">2012–2015</div>
           <div class="timeline-body">
             <h3>Bachelor's in Law <span class="grade">12.49/20</span></h3>
-            <div class="org">Université Paris-Sud</div>
+            <div class="org">Université Paris-Sud (now Université Paris-Saclay)</div>
           </div>
         </div>
 
@@ -1299,7 +1315,7 @@
           <div class="timeline-date">2012–2015</div>
           <div class="timeline-body">
             <h3>University Diploma · Comparative &amp; International Legal Studies <span class="grade">14.42/20 · cum laude</span></h3>
-            <div class="org">Université Paris-Sud</div>
+            <div class="org">Université Paris-Sud (now Université Paris-Saclay)</div>
           </div>
         </div>
       </div>
@@ -1371,7 +1387,7 @@
     <footer class="statusbar">
       <div class="status-left">
         <span class="status-branch">avrile · main</span>
-        <span class="status-meta">© 2026 avrile floro · updated may 2026</span>
+        <span class="status-meta">© 2026 avrile floro · updated august 2026</span>
       </div>
       <div class="status-right">
         <span class="status-meta">↑↓ move · →/↵ enter · ← back</span>
@@ -1384,13 +1400,37 @@
 </div>
 
 <!-- ============ MODALS ============ -->
+<div class="modal-backdrop" id="modal-biasaudit">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" aria-label="Close">×</button>
+    <span class="modal-tag">Mechanistic Interpretability · AI Fairness</span>
+    <h2>Interpretability Auditing for Bias Measurement</h2>
+    <div class="modal-meta"><strong>Student Researcher</strong> · Collaboration with Prof. Ali Emami, Emory University</div>
+    <div class="modal-dates">Jun 2026–Present</div>
+
+    <p>
+      Interpretability methods are increasingly used to audit social bias in
+      language models, yet their readouts are rarely validated themselves.
+      When does what we read off a model's internals reflect what the model
+      actually does?
+    </p>
+
+    <h3>Focus</h3>
+    <ul>
+      <li>Reliability of interpretability methods for social-bias auditing</li>
+      <li>Evaluation protocols for trusting internal-representation readouts</li>
+      <li>Bias measurement and steering across multiple open-weight LLMs</li>
+    </ul>
+  </div>
+</div>
+
 <div class="modal-backdrop" id="modal-mechinterp">
   <div class="modal" role="dialog" aria-modal="true">
     <button class="modal-close" aria-label="Close">×</button>
     <span class="modal-tag">Mechanistic Interpretability</span>
     <h2>Cultural Binding Heads in Language Models</h2>
     <div class="modal-meta"><strong>Student Researcher</strong> · SAMOVAR, Télécom SudParis</div>
-    <div class="modal-dates">Feb 2026–Present</div>
+    <div class="modal-dates">Feb 2026–Jul 2026</div>
 
     <p>
       Why do LLMs default to equal treatment across cultural groups even when
@@ -1409,8 +1449,8 @@
 
     <h3>Key findings</h3>
     <ul>
-      <li>A small set of mid-layer attention heads causally mediates cultural binding</li>
-      <li>The bottleneck is <em>routing</em>, not knowledge</li>
+      <li>2–3 mid-layer attention heads causally mediate cultural binding across eight LLMs</li>
+      <li>Models know 3–5× more than they act upon: the bottleneck is <em>routing</em>, not knowledge</li>
       <li>Identified circuits transfer from instruct to base models</li>
       <li>One model family shows SFT reprogramming the binding circuit rather than amplifying it</li>
     </ul>
@@ -1428,7 +1468,7 @@
     <span class="modal-tag">Legal NLP · Lead Author</span>
     <h2>Where Experts Disagree, Models Fail</h2>
     <div class="modal-meta"><strong>Student Researcher</strong> · DIG Team, LTCI, Télécom Paris</div>
-    <div class="modal-dates">Apr 2025–Present</div>
+    <div class="modal-dates">Apr 2025–Jul 2026</div>
 
     <p>
       A benchmark for detecting <em>implicit</em> statutory citations
@@ -1461,48 +1501,29 @@
 <div class="modal-backdrop" id="modal-cassation">
   <div class="modal" role="dialog" aria-modal="true">
     <button class="modal-close" aria-label="Close">×</button>
-    <span class="modal-tag">Research Internship · Summer 2026</span>
-    <h2>NLP &amp; graph modeling on French jurisprudence</h2>
-    <div class="modal-meta"><strong>Research Intern</strong> · NOS team, i3 lab (CNRS), Télécom Paris</div>
+    <span class="modal-tag">Legal NLP · Research Internship</span>
+    <h2>Argument Mining on French Supreme Court Rulings</h2>
+    <div class="modal-meta"><strong>Research Intern</strong> · i3, Interdisciplinary Institute for Innovation (CNRS UMR 9217) · Supervisors: Prof. Tiphaine Viard, Prof. Maria Boritchev, Prof. Thomas Le Goff</div>
     <div class="modal-dates">May 2026–Aug 2026</div>
 
     <p>
-      A computational study of large-scale French case-law corpora. I'm using
-      NLP and graph modeling to find patterns of legal reasoning and trace how
-      they evolve.
+      A computational analysis of civil rulings from the French Supreme Court
+      (<em>Cour de cassation</em>), using Judilibre open data. The codified
+      rhetorical structure of <em>cassation</em> rulings makes it possible to
+      map each ground of appeal to the court's response at scale.
     </p>
 
-    <h3>Why it's interesting</h3>
+    <h3>What I built</h3>
     <ul>
-      <li>The corpus is large enough to support meaningful graph-theoretic analysis</li>
-      <li>The structure of judicial reasoning lets us trace how arguments propagate, mutate, and get overturned</li>
-      <li>The project sits at the intersection of NLP, network science, and legal scholarship</li>
+      <li>A large-scale extraction pipeline over the five civil chambers</li>
+      <li>121K+ ground–response argument pairs across 86K decisions</li>
+      <li>The resulting dataset and tool paper, as lead author</li>
     </ul>
-  </div>
-</div>
 
-<div class="modal-backdrop" id="modal-shepherding">
-  <div class="modal" role="dialog" aria-modal="true">
-    <button class="modal-close" aria-label="Close">×</button>
-    <span class="modal-tag">Multi-Agent Systems</span>
-    <h2>Collective Nudging that Scales</h2>
-    <div class="modal-meta"><strong>Student Researcher</strong> · ACES Team, LTCI, Télécom Paris</div>
-    <div class="modal-dates">Mar 2026–Present</div>
-
-    <p>
-      A NetLogo agent-based study of how the number of shepherd dogs required
-      to herd a flock scales with flock size. The real question behind the
-      dogs-and-sheep framing is one of scalability: how does the cost of
-      steering a swarm grow as the collective gets larger, and where are the
-      breakpoints past which a given number of controllers can no longer succeed?
-    </p>
-
-    <h3>Contribution</h3>
-    <ul>
-      <li>Proposes a local <em>sheep-density gradient</em> as a tractable approximation of the flock's global centre of mass</li>
-      <li>Characterises a viable influence range via D<sub>min</sub>/D<sub>max</sub> bounds</li>
-      <li>11,000+ simulation runs sweeping over flock size, dog count, and behavioural parameters</li>
-    </ul>
+    <div class="modal-paper">
+      <em>A Grammar of French Civil Cassation: A Ground-Level Dataset and Tool.</em>
+      Work in progress, 2026.
+    </div>
   </div>
 </div>
 
