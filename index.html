@@ -32,7 +32,7 @@
     --scanline:   rgba(255, 255, 255, 0.015);
     --spotlight-color: rgba(167, 139, 250, 0.06);
     --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-    --sans:  var(--mono);
+    --sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --serif: var(--mono);
   }
 
@@ -921,6 +921,19 @@
     .pane > section { transition: none; }
     .pane > section.is-open { animation: none; }
     html { scroll-behavior: auto; }
+  }
+
+  /* ===== HYBRID TYPE (prose in system sans, terminal accents stay mono) ===== */
+  body,
+  p, .lede, ul.bullets li,
+  .research-card p, .research-card h3,
+  .pub-body h3, .pub-authors,
+  .award p, .award h3,
+  .project-feature p, .project-feature-head h3, .project-card p, .project-card h4,
+  .timeline-body h3, .timeline-body p, .org,
+  .contact-block p,
+  .modal p, .modal h2, .modal li, .modal h3 {
+    font-family: var(--sans);
   }
 </style>
 <script>
