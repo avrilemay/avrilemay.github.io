@@ -3,60 +3,65 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#f5f4f8" />
+<meta name="theme-color" content="#f7f4f5" />
 <title>Avrile Floro</title>
 <meta name="description" content="Personal homepage of Avrile Floro, PhD Track Master student in Data & AI at Institut Polytechnique de Paris." />
 <meta property="og:title" content="Avrile Floro" />
 <meta property="og:description" content="PhD Track Master student in Data & AI at Institut Polytechnique de Paris. Mechanistic interpretability, AI fairness, and legal NLP." />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231a1922'/><path d='M8 10 L15 16 L8 22' fill='none' stroke='%23a78bfa' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/><rect x='17' y='19' width='9' height='3' fill='%23a78bfa'/></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231c191c'/><path d='M8 10 L15 16 L8 22' fill='none' stroke='%23dfa3b4' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/><rect x='17' y='19' width='9' height='3' fill='%23dfa3b4'/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    /* === DARK (cool charcoal · light purple + periwinkle) — toggle === */
-    --bg:        #1a1922;
-    --bg-card:   #232231;
-    --bg-hover:  #2b2940;
-    --ink:       #e8e7ef;
-    --ink-soft:  #a8a5ba;
-    --ink-faint: #76738a;
-    --line:      #322f44;
-    --accent:     #a78bfa;   /* light purple */
+    /* === DARK (warm charcoal · dusty rose) — toggle === */
+    --bg:        #1c191c;
+    --bg-card:   #262128;
+    --bg-hover:  #2f2831;
+    --ink:       #eee7ea;
+    --ink-soft:  #b0a5ab;
+    --ink-faint: #7e747a;
+    --line:      #372f37;
+    --accent:     #dfa3b4;   /* dusty rose */
     --accent-dim: #8b9bd4;   /* soft periwinkle blue */
-    --accent-2:   #a78bfa;
-    --highlight:  #262338;
-    --accent-tint: rgba(167, 139, 250, 0.16);
+    --accent-2:   #dfa3b4;
+    --highlight:  #2b232b;
+    --accent-tint: rgba(223, 163, 180, 0.16);
     --scanline:   rgba(255, 255, 255, 0.015);
-    --spotlight-color: rgba(167, 139, 250, 0.06);
+    --spotlight-color: rgba(223, 163, 180, 0.06);
     --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-    --sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --sans:  "Source Serif 4", "Iowan Old Style", Georgia, serif;
     --serif: var(--mono);
   }
 
   :root[data-theme="light"] {
-    /* === LIGHT (cool soft white · lilac accent + grey, whisper of blue) — default === */
-    --bg:        #f5f4f8;
-    --bg-card:   #eceaf3;
-    --bg-hover:  #e4e1ef;
-    --ink:       #26252e;
-    --ink-soft:  #565467;
-    --ink-faint: #807d8f;
-    --line:      #ddd9ea;
-    --accent:     #6c4fd0;   /* light-medium purple (readable on light) */
+    /* === LIGHT (rosé off-white · dusty rose) — default === */
+    --bg:        #f7f4f5;
+    --bg-card:   #efe9eb;
+    --bg-hover:  #e8dfe2;
+    --ink:       #2a262a;
+    --ink-soft:  #5e565b;
+    --ink-faint: #8a7e83;
+    --line:      #e3d9dd;
+    --accent:     #9e4f66;   /* dusty rose (readable on light) */
     --accent-dim: #5f6e99;   /* soft slate blue — the cool secondary */
-    --accent-2:   #6c4fd0;
-    --highlight:  #ece8f7;
-    --accent-tint: rgba(108, 79, 208, 0.12);
+    --accent-2:   #9e4f66;
+    --highlight:  #f4e9ed;
+    --accent-tint: rgba(158, 79, 102, 0.12);
     --scanline:   transparent;
-    --spotlight-color: rgba(108, 79, 208, 0.05);
+    --spotlight-color: rgba(158, 79, 102, 0.05);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   ::selection { background: var(--accent); color: var(--bg); }
+
+  /* ===== NO ITALICS — emphasis carried by weight and colour ===== */
+  em, i, cite, dfn, var, address, q, blockquote { font-style: normal; }
+  em { font-weight: 500; color: var(--ink); }
+  h1 em, h2 em, h3 em, h4 em, strong em, b em { font-weight: inherit; color: inherit; }
 
   body {
     background: var(--bg);
@@ -333,7 +338,6 @@
   #about p { font-size: 1rem; margin-bottom: 1.1rem; color: var(--ink-soft); }
   #about p strong { color: var(--ink); font-weight: 600; }
   #about .lede {
-    font-family: var(--mono);
     font-size: 1.12rem;
     line-height: 1.55;
     color: var(--ink);
@@ -643,7 +647,7 @@
     color: var(--ink);
   }
   .timeline-body .org { font-size: 0.84rem; color: var(--ink-soft); margin-bottom: 0.5rem; }
-  .timeline-body .org em { font-style: italic; color: var(--ink-faint); }
+  .timeline-body .org em { font-style: normal; font-weight: 400; color: var(--ink-faint); }
   .timeline-body p { font-size: 0.88rem; color: var(--ink-soft); margin-top: 0.5rem; }
   .timeline-body .grade {
     display: inline-block;
@@ -675,11 +679,12 @@
   #contact p { font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 1rem; }
   .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 1.5rem;
     margin-top: 1.5rem;
   }
   .contact-grid .contact-full { grid-column: 1 / -1; }
+  .contact-grid a { overflow-wrap: anywhere; }
   .contact-grid div span {
     display: block;
     font-family: var(--mono);
@@ -1033,7 +1038,7 @@
       </p>
 
       <ul class="bullets">
-        <li>Background: law (LL.M., Duke; financial law, Paris-Dauphine) and banking compliance at PwC, then teaching French as a foreign language, now AI/NLP</li>
+        <li>Trajectory: law (LL.M. Duke · financial law Paris-Dauphine · banking compliance at PwC) → teaching French as a foreign language → AI/NLP at IP Paris</li>
         <li>I read and write in French and English, and speak Spanish</li>
         <li>Outside the lab: PADI Divemaster, blackwater and pelagic diving</li>
       </ul>
@@ -1359,6 +1364,10 @@
           <div>
             <span>Email</span>
             <a class="js-email js-email-text" data-u="floro.avrile" data-d="gmail.com">email me</a>
+          </div>
+          <div>
+            <span>Email (IP Paris)</span>
+            <a class="js-email js-email-text" data-u="avrile.floro" data-d="ip-paris.fr">email me</a>
           </div>
           <div>
             <span>GitHub</span>
@@ -1706,7 +1715,7 @@
 
   function applyTheme(t) {
     docEl.setAttribute('data-theme', t);
-    if (themeMeta) themeMeta.setAttribute('content', t === 'light' ? '#f5f4f8' : '#1a1922');
+    if (themeMeta) themeMeta.setAttribute('content', t === 'light' ? '#f7f4f5' : '#1c191c');
     if (themeBtn) themeBtn.textContent = t === 'light' ? '☾ dark' : '☀ light';
   }
   applyTheme(docEl.getAttribute('data-theme') || 'light');
