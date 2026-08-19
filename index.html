@@ -141,7 +141,7 @@
   }
 
   .name {
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.15;
@@ -151,18 +151,10 @@
     margin-bottom: 0.5rem;
   }
   .name::before { content: "~ "; color: var(--ink-faint); font-weight: 400; }
-  .name em { font-style: normal; color: var(--accent); display: inline; font-size: inherit; font-weight: 700; }
-  .name::after {
-    content: "\2587";
-    color: var(--accent);
-    margin-left: 0.1rem;
-    font-weight: 400;
-    animation: blink 1.1s steps(1) infinite;
-  }
-  @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  .name em { font-style: normal; color: var(--ink); display: inline; font-size: inherit; font-weight: 700; }
 
   .role {
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 0.72rem;
     color: var(--ink-soft);
     margin-bottom: 2rem;
@@ -174,7 +166,7 @@
 
   nav.main-nav { margin-bottom: 1.5rem; }
   nav.main-nav .label {
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 0.74rem;
     text-transform: lowercase;
     letter-spacing: 0;
@@ -198,7 +190,7 @@
     display: flex;
     align-items: baseline;
     border-bottom: none;
-    font-family: var(--mono);
+    font-family: var(--sans);
     text-transform: lowercase;
     transition: color 0.15s ease;
   }
@@ -221,7 +213,7 @@
     padding: 0.55rem 0.9rem;
     background: transparent;
     color: var(--accent);
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 0.76rem;
     letter-spacing: 0;
     text-transform: lowercase;
@@ -243,7 +235,7 @@
   }
   .sidebar-links a {
     color: var(--ink-soft);
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 0.76rem;
     border-bottom: none;
     text-transform: lowercase;
@@ -309,7 +301,7 @@
 
   .section-header { margin-bottom: 2.25rem; }
   h2.section-title {
-    font-family: var(--mono);
+    font-family: var(--sans);
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 0;
@@ -320,8 +312,8 @@
     gap: 0.6rem;
     padding-left: 0;
   }
-  h2.section-title::before { content: "##"; color: var(--accent); font-weight: 700; }
-  h2.section-title em { font-style: normal; color: var(--accent); }
+  h2.section-title::before { content: "##"; color: var(--ink-faint); font-weight: 700; }
+  h2.section-title em { font-style: normal; color: var(--ink); }
   .section-kicker {
     font-family: var(--mono);
     font-size: 0.72rem;
@@ -344,7 +336,9 @@
     margin-bottom: 1.5rem;
     font-weight: 400;
   }
-  #about .lede em { color: var(--accent); font-style: normal; font-weight: 500; }
+  #about .lede em { color: var(--ink); font-style: normal; font-weight: 500; }
+  #about .lede a { color: var(--accent-dim); }
+  #about .lede a:hover { border-bottom-color: var(--accent-dim); }
 
   ul.bullets { list-style: none; margin: 1.5rem 0; }
   ul.bullets li {
@@ -1028,14 +1022,14 @@
         govern AI.
       </p>
 
+      <!-- Paragraphe retiré le 19/08/2026, gardé au cas où :
       <p>
-        My research runs along two threads. In interpretability, I study how
-        cultural context shapes model behavior and whether interpretability
-        methods can be trusted for bias auditing. In legal NLP, I build
-        datasets, benchmarks, and
-        tools for French case law, from implicit statutory citation detection
-        to argument mining on Supreme Court rulings.
+        I study how cultural context shapes model behavior and whether
+        interpretability methods give reliable bias measurements. On the
+        legal side, I build datasets, benchmarks, and tools for case law,
+        from citation detection to argument mining on Supreme Court rulings.
       </p>
+      -->
 
       <ul class="bullets">
         <li>Trajectory: law (LL.M. Duke · financial law Paris-Dauphine · banking compliance at PwC) → teaching French as a foreign language → AI/NLP at IP Paris</li>
