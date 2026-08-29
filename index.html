@@ -416,6 +416,7 @@
     margin: 0;
   }
   .research-card .tag::before { content: "#"; opacity: 0.7; margin-right: 0.1rem; }
+  .research-card .research-meta { color: var(--ink-soft); font-size: 0.84rem; margin-top: 0.4rem; clear: both; }
   .research-card p { color: var(--ink-soft); font-size: 0.88rem; margin-top: 0.45rem; clear: both; }
   .research-card .read-more {
     margin-top: 0.5rem;
@@ -1049,12 +1050,12 @@
         <div class="research-card" data-modal="modal-biasaudit">
           <span class="tag">Interpretability · Fairness</span>
           <h3>Interpretability Auditing for Bias Measurement</h3>
+          <div class="research-meta">Collaboration with Prof. Ali Emami, Emory University</div>
           <p>
             When can readouts of a model's internal representations be trusted
-            for bias measurement and steering? Joint work with Prof. Ali Emami
-            (Emory University) on evaluation protocols for the reliability of
-            interpretability methods in social-bias auditing, across multiple
-            open-weight LLMs.
+            for bias measurement and steering? Joint research on evaluation
+            protocols for the reliability of interpretability methods in
+            social-bias auditing, across multiple open-weight LLMs.
           </p>
           <span class="read-more">Read more →</span>
         </div>
@@ -1062,12 +1063,14 @@
         <div class="research-card" data-modal="modal-cassation">
           <span class="tag">Legal NLP · Internship 2026</span>
           <h3>Argument Mining on French Supreme Court Rulings</h3>
+          <div class="research-meta">i3 – Interdisciplinary Institute for Innovation, CNRS UMR 9217, Palaiseau, France · Supervisors: Prof. Tiphaine Viard, Prof. Maria Boritchev, Prof. Thomas Le Goff</div>
           <p>
             A large-scale extraction pipeline exploiting the codified rhetorical
             structure of French <em>cassation</em> rulings to map each ground of
             appeal to the court's response: 121K+ argument pairs across 86K
             decisions and the five civil chambers. Lead author of the resulting
-            dataset and tool paper.
+            dataset and tool paper, with Tamara Dhorasoo, Nils Holzenberger,
+            Thomas Le Goff, Tiphaine Viard, and Maria Boritchev.
           </p>
           <span class="read-more">Read more →</span>
         </div>
@@ -1075,12 +1078,14 @@
         <div class="research-card" data-modal="modal-mechinterp">
           <span class="tag">Mech Interp</span>
           <h3>Cultural Binding Heads</h3>
+          <div class="research-meta">SAMOVAR, Télécom SudParis · Supervisor: Prof. Luca Benedetto</div>
           <p>
             Why do LLMs default to equal treatment across cultural groups even
             when context warrants differentiation? I identify the 2–3 mid-layer
             attention heads that causally mediate cultural binding across eight
             language models, and find that models know 3–5× more than they act
-            upon: the bottleneck is <em>routing</em>, not knowledge.
+            upon: the bottleneck is <em>routing</em>, not knowledge. Lead author
+            of the resulting paper, with Luca Benedetto.
           </p>
           <span class="read-more">Read more →</span>
         </div>
@@ -1088,11 +1093,13 @@
         <div class="research-card" data-modal="modal-legalnlp">
           <span class="tag">Legal NLP</span>
           <h3>Where Experts Disagree, Models Fail</h3>
+          <div class="research-meta">DIG Team, LTCI, Télécom Paris · Supervisor: Prof. Nils Holzenberger</div>
           <p>
             A benchmark of 1,015 passage–article pairs in French civil law,
             annotated by three legal experts (κ = 0.33). Annotator disagreement
             turns out to be the strongest predictor of model failure on implicit
-            statutory citation.
+            statutory citation. Lead author of the resulting paper, with Tamara
+            Dhorasoo, Soline Pellez, and Nils Holzenberger.
           </p>
           <span class="read-more">Read more →</span>
         </div>
@@ -1249,7 +1256,7 @@
           <div class="timeline-body">
             <h3>PhD Track Master in Data &amp; AI</h3>
             <div class="org"><a href="https://www.ip-paris.fr/" target="_blank" rel="noopener">Institut Polytechnique de Paris</a> <em>(École Polytechnique &amp; Télécom Paris)</em></div>
-            <p>Selected coursework: Deep Learning · Collective Intelligence · AI Ethics · Logic &amp; Knowledge Representation · DBMS · Probabilities.</p>
+            <p>Advisor: Prof. Nils Holzenberger. Selected coursework: Deep Learning · Collective Intelligence · AI Ethics · Logic &amp; Knowledge Representation · DBMS · Probabilities.</p>
           </div>
         </div>
 
@@ -1426,7 +1433,7 @@
     <button class="modal-close" aria-label="Close">×</button>
     <span class="modal-tag">Mechanistic Interpretability</span>
     <h2>Cultural Binding Heads in Language Models</h2>
-    <div class="modal-meta"><strong>Student Researcher</strong> · SAMOVAR, Télécom SudParis</div>
+    <div class="modal-meta"><strong>Student Researcher</strong> · SAMOVAR, Télécom SudParis · Supervisor: Prof. Luca Benedetto</div>
     <div class="modal-dates">Feb 2026–Jul 2026</div>
 
     <p>
@@ -1453,6 +1460,7 @@
     </ul>
 
     <div class="modal-paper">
+      Floro, A., &amp; Benedetto, L. (2026).
       <em>Cultural Binding Heads in Language Models.</em>
       <a href="https://arxiv.org/abs/2605.28543" target="_blank" rel="noopener">arXiv:2605.28543 →</a>
     </div>
@@ -1464,7 +1472,7 @@
     <button class="modal-close" aria-label="Close">×</button>
     <span class="modal-tag">Legal NLP · Lead Author</span>
     <h2>Where Experts Disagree, Models Fail</h2>
-    <div class="modal-meta"><strong>Student Researcher</strong> · DIG Team, LTCI, Télécom Paris</div>
+    <div class="modal-meta"><strong>Student Researcher</strong> · DIG Team, LTCI, Télécom Paris · Supervisor: Prof. Nils Holzenberger</div>
     <div class="modal-dates">Apr 2025–Jul 2026</div>
 
     <p>
@@ -1500,7 +1508,7 @@
     <button class="modal-close" aria-label="Close">×</button>
     <span class="modal-tag">Legal NLP · Research Internship</span>
     <h2>Argument Mining on French Supreme Court Rulings</h2>
-    <div class="modal-meta"><strong>Research Intern</strong> · i3, Interdisciplinary Institute for Innovation (CNRS UMR 9217) · Supervisors: Prof. Tiphaine Viard, Prof. Maria Boritchev, Prof. Thomas Le Goff</div>
+    <div class="modal-meta"><strong>Research Intern</strong> · i3 – Interdisciplinary Institute for Innovation, CNRS UMR 9217, Palaiseau, France · Supervisors: Prof. Tiphaine Viard, Prof. Maria Boritchev, Prof. Thomas Le Goff</div>
     <div class="modal-dates">May 2026–Aug 2026</div>
 
     <p>
@@ -1518,8 +1526,9 @@
     </ul>
 
     <div class="modal-paper">
+      Floro, A., Dhorasoo, T., Holzenberger, N., Le Goff, T., Viard, T., &amp; Boritchev, M. (2026).
       <em>A Grammar of French Civil Cassation: A Ground-Level Dataset and Tool.</em>
-      Work in progress, 2026.
+      Work in progress.
     </div>
   </div>
 </div>
