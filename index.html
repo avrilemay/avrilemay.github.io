@@ -373,6 +373,42 @@
     .about-photo { float: none; margin: 0 0 1.5rem; }
   }
 
+  /* About — News */
+  .news { clear: both; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+  .news-kicker {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 400;
+    text-transform: lowercase;
+    letter-spacing: 0;
+    color: var(--ink-faint);
+    margin-bottom: 0.9rem;
+  }
+  .news-kicker::before { content: "// "; }
+  .news-list { list-style: none; }
+  .news-item {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 1.25rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-item time {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--ink-faint);
+    padding-top: 0.15rem;
+  }
+  .news-item span { font-size: 0.88rem; line-height: 1.55; color: var(--ink-soft); text-wrap: pretty; }
+  .news-item strong { font-weight: 600; }
+  .news-item a { color: var(--ink); }
+  .news-item a:hover { color: var(--accent); }
+  @media (max-width: 600px) {
+    .news-item { grid-template-columns: 1fr; gap: 0.2rem; padding: 0.75rem 0; }
+    .news-item time { padding-top: 0; }
+  }
+
   /* Research — ruled list (no box) */
   .research-grid { margin-top: 1.5rem; }
   .research-card {
@@ -1037,6 +1073,20 @@
         <li>I read and write in French and English, and speak Spanish</li>
         <li>Outside the lab: PADI Divemaster, blackwater and pelagic diving</li>
       </ul>
+
+      <div class="news">
+        <h3 class="news-kicker">News</h3>
+        <ul class="news-list">
+          <li class="news-item">
+            <time datetime="2026-09">Sep 2026</time>
+            <span><a href="https://arxiv.org/abs/2603.22973" target="_blank" rel="noopener"><strong>Where Experts Disagree, Models Fail</strong></a> accepted at the Natural Legal Language Processing Workshop (NLLP 2026) @ EMNLP 2026, archival track.</span>
+          </li>
+          <li class="news-item">
+            <time datetime="2026-09">Sep 2026</time>
+            <span><a href="https://arxiv.org/abs/2605.28543" target="_blank" rel="noopener"><strong>Cultural Binding Heads in Language Models</strong></a> accepted at BlackboxNLP 2026 @ EMNLP 2026, archival track.</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- RESEARCH -->
@@ -1121,7 +1171,7 @@
         <div class="pub-body">
           <h3><a href="https://arxiv.org/abs/2603.22973" target="_blank" rel="noopener">Where Experts Disagree, Models Fail: Detecting Implicit Legal Citations in French Court Decisions</a></h3>
           <div class="pub-authors"><strong>Avrile Floro</strong>, Tamara Dhorasoo, Soline Pellez, Nils Holzenberger</div>
-          <div class="pub-venue">Under review · 2026</div>
+          <div class="pub-venue">Natural Legal Language Processing Workshop (NLLP) @ EMNLP 2026 · archival</div>
           <a class="pub-status" href="https://arxiv.org/abs/2603.22973" target="_blank" rel="noopener">arXiv ↗</a>
         </div>
       </div>
@@ -1380,7 +1430,7 @@
           </div>
           <div class="contact-full">
             <span>Languages</span>
-            FR (native) · EN (C1–C2) · ES (B2)
+            FR (native) · EN (C2, IELTS 8.5) · ES (B2)
           </div>
         </div>
       </div>
@@ -1391,7 +1441,7 @@
     <footer class="statusbar">
       <div class="status-left">
         <span class="status-branch">avrile · main</span>
-        <span class="status-meta">© 2026 avrile floro · updated august 2026</span>
+        <span class="status-meta">© 2026 avrile floro · updated september 2026</span>
       </div>
       <div class="status-right">
         <span class="status-meta">↑↓ move · →/↵ enter · ← back</span>
@@ -1448,7 +1498,6 @@
       <li>Causal intervention across eight LLMs (Mistral, Llama, Gemma, Mistral-Nemo, both instruct and base)</li>
       <li>Edge knockout to isolate causal mediators</li>
       <li>Dose–response analysis to characterise circuit strength</li>
-      <li>Counterfactual steering for evaluation</li>
     </ul>
 
     <h3>Key findings</h3>
@@ -1499,6 +1548,7 @@
     <div class="modal-paper">
       Floro, A., Dhorasoo, T., Pellez, S., &amp; Holzenberger, N. (2026).
       <em>Where Experts Disagree, Models Fail: Detecting Implicit Legal Citations in French Court Decisions.</em>
+      Natural Legal Language Processing Workshop (NLLP 2026), archival track (EMNLP workshop).
       <a href="https://arxiv.org/abs/2603.22973" target="_blank" rel="noopener">arXiv:2603.22973 →</a>
     </div>
   </div>
