@@ -422,8 +422,16 @@
   }
   .news-kicker::before { content: "// "; }
   .news-list { list-style: none; }
-  .news-viewport { position: relative; overflow: hidden; transition: height 0.8s ease; }
+  .news-viewport { position: relative; overflow: hidden; }
   .news-viewport:not(.is-ticking) { height: auto !important; }
+  .news-viewport.is-ticking {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
+  }
+  .news-viewport.is-ticking .news-list { animation: news-scroll 60s linear infinite; }
+  .news-viewport.is-ticking:hover .news-list,
+  .news-viewport.is-ticking:focus-within .news-list { animation-play-state: paused; }
+  @keyframes news-scroll { from { transform: translateY(0); } to { transform: translateY(var(--news-loop, 0)); } }
   .news-item {
     display: grid;
     grid-template-columns: 5rem 1fr;
@@ -1902,37 +1910,31 @@
     if (themeBtn) themeBtn.textContent = t === 'light' ? '☾ dark' : '☀ light';
   }
   applyTheme(docEl.getAttribute('data-theme') || 'light');
-  // News ticker: show 4 items, every few seconds slide the top one away and append it at the end
+  // News ticker: show ~4 items and scroll the list very slowly and continuously (loops via a cloned copy)
   (function () {
     const vp = document.querySelector('.news-viewport');
     const list = vp && vp.querySelector('.news-list');
-    const VISIBLE = 4, DELAY = 4500;
+    const VISIBLE = 4, SPEED = 10; // px per second
     if (!list || list.children.length <= VISIBLE) return;
     if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const originals = [...list.children];
+    originals.forEach((li) => {
+      const c = li.cloneNode(true);
+      c.setAttribute('aria-hidden', 'true');
+      c.querySelectorAll('a').forEach((a) => { a.tabIndex = -1; });
+      list.appendChild(c);
+    });
     const sum = (els) => els.reduce((h, li) => h + li.getBoundingClientRect().height, 0);
-    const fit = () => { vp.style.height = sum([...list.children].slice(0, VISIBLE)) + 'px'; };
-    let paused = false, busy = false;
-    vp.addEventListener('mouseenter', () => { paused = true; });
-    vp.addEventListener('mouseleave', () => { paused = false; });
-    vp.addEventListener('focusin', () => { paused = true; });
-    vp.addEventListener('focusout', () => { paused = false; });
-    new ResizeObserver(() => { if (!busy) fit(); }).observe(list);
+    const layout = () => {
+      const loop = sum(originals);
+      if (!loop) return;
+      vp.style.height = sum(originals.slice(0, VISIBLE)) + 'px';
+      list.style.setProperty('--news-loop', -loop + 'px');
+      list.style.animationDuration = (loop / SPEED) + 's';
+    };
+    new ResizeObserver(layout).observe(list);
     vp.classList.add('is-ticking');
-    fit();
-    setInterval(() => {
-      if (paused || busy || document.hidden || !vp.offsetParent) return;
-      busy = true;
-      const first = list.firstElementChild;
-      list.style.transition = 'transform 0.8s ease';
-      list.style.transform = 'translateY(' + (-first.getBoundingClientRect().height) + 'px)';
-      vp.style.height = sum([...list.children].slice(1, VISIBLE + 1)) + 'px';
-      setTimeout(() => {
-        list.style.transition = 'none';
-        list.appendChild(first);
-        list.style.transform = 'translateY(0)';
-        busy = false;
-      }, 850);
-    }, DELAY);
+    layout();
   })();
 
   // Trajectory waves: freeze the SVG ripple when reduced motion is requested
