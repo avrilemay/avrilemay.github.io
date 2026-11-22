@@ -1953,18 +1953,24 @@
       offset += e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
       wrap(); paint();
     }, { passive: false });
+    let startY = 0;
     vp.addEventListener('pointerdown', (e) => {
       if (e.button !== 0) return;
-      dragging = true; dragged = false; lastY = e.clientY;
-      vp.setPointerCapture(e.pointerId);
-      vp.classList.add('is-dragging');
-      document.querySelector('.cursor-ring')?.classList.add('shrink');
+      if (e.pointerType === 'mouse') e.preventDefault(); // stops the browser's own link drag, click still fires
+      dragging = true; dragged = false; startY = lastY = e.clientY;
     });
     vp.addEventListener('pointermove', (e) => {
       if (!dragging) return;
+      // capture only once it is a real drag, so a plain click still reaches the link
+      if (!dragged) {
+        if (Math.abs(e.clientY - startY) < 5) return;
+        dragged = true;
+        vp.setPointerCapture(e.pointerId);
+        vp.classList.add('is-dragging');
+        document.querySelector('.cursor-ring')?.classList.add('shrink');
+      }
       const dy = e.clientY - lastY;
       lastY = e.clientY;
-      if (Math.abs(dy) > 0) dragged = true;
       offset -= dy; wrap(); paint();
     });
     const endDrag = (e) => {
